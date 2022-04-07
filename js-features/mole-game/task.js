@@ -3,8 +3,8 @@ let lost = document.getElementById("lost");
 
 
 for (let i = 1; i < 10; i++) {
-    document.getElementById('что здесь должно быть?').onclick = function () {
-        if (this.className.contains('hole_has-mole')) {
+    document.getElementById(`hole${i}`).onclick = function () {
+        if (this.classList.contains('hole_has-mole')) {
             dead.textContent++;
         } else {
             lost.textContent++;
