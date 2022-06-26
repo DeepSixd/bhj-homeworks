@@ -7,8 +7,9 @@ let activeIndex = 0;
 
 function changeSlide(idx) {
     slider.forEach((item) => item.classList.remove('slider__item_active'));
-    dots.forEach((item) => item.classList.remove('slider__dot_active'));
     slider[idx].classList.add('slider__item_active');
+
+    dots.forEach((item) => item.classList.remove('slider__dot_active'));
     dots[idx].classList.add('slider__dot_active');
 }   
 
@@ -29,7 +30,16 @@ nextSlide.addEventListener('click', function() {
 });
 
 
-dots[activeIndex].classList.add('slider__dota_active');
+dots[activeIndex].classList.add('slider__dot_active');
 dots.forEach((item, i) => item.onclick = () => {
     changeSlide(i);
 })
+
+for (let i = 0; i < dots.length; i++) {
+    dots[i].onclick = function() {
+        changeSlide(i);
+        activeIndex = i;
+    }
+}
+
+// уточнить про метод foreach
