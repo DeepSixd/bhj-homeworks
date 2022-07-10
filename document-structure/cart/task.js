@@ -42,6 +42,6 @@ product.forEach((elem) => {
     };
 
     addBtn.onclick = function() {
-        addToCard(prodId, prodImg, quantity);
+        addToCart(prodId, prodImg, quantity);
     };
 });
